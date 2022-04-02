@@ -32,3 +32,8 @@ services:
     ports:
       - 9090:8080
     restart: unless-stopped
+
+networks:
+  default:
+    external:
+      name: arr_default
