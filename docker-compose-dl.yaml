@@ -30,5 +30,5 @@ services:
       - /share/Incoming:/downloads
       - /share/Incoming/tmp:/incomplete-downloads
     ports:
-      - 8080:8080
+      - 9090:8080
     restart: unless-stopped
