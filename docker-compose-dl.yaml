@@ -12,6 +12,8 @@ services:
     volumes:
       - /share/homes/chief/Config/Transmission:/config
       - /share/Incoming:/downloads
+      - /share/Movies:/movies
+      - /share/Shows:/tv
     ports:
       - 9091:9091
       - 51413:51413
@@ -28,7 +30,8 @@ services:
     volumes:
       - /share/homes/chief/Config/Sabnzbd:/config
       - /share/Incoming:/downloads
-      - /share/Incoming/tmp:/incomplete-downloads
+      - /share/Movies:/movies
+      - /share/Shows:/tv
     ports:
       - 9090:8080
     restart: unless-stopped
