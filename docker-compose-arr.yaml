@@ -1,0 +1,45 @@
+version: "3"
+services:
+ 
+  sonarr:
+    image: ghcr.io/linuxserver/sonarr:develop
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=100
+      - TZ=America/New_York
+    volumes:
+      - /share/homes/chief/Config/Sonarr:/config
+      - /share/Shows:/tv
+      - /share/Incoming:/downloads
+    ports:
+      - 8989:8989
+    restart: unless-stopped
+  
+  radarr:
+    image: ghcr.io/linuxserver/radarr:develop 
+    container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=100
+      - TZ=America/New_York
+    volumes:
+      - /share/homes/chief/Config/Radarr:/config
+      - /share/Movies:/movies
+      - /share/Incoming:/downloads
+    ports:
+      - 7878:7878
+    restart: unless-stopped
+
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:develop
+    container_name: prowlarr
+    environment:
+      - PUID=1000
+      - PGID=100
+      - TZ=America/New_York
+    volumes:
+      - /share/homes/chief/Config/Prowlarr:/config
+    ports:
+      - 9696:9696
+    restart: unless-stopped
