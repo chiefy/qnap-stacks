@@ -27,7 +27,7 @@ services:
       - TZ=America/New_York
     volumes:
       - /share/homes/chief/Config/Sabnzbd:/config
-      - /share/Incoming::/downloads
+      - /share/Incoming:/downloads
       - /share/Incoming/tmp:/incomplete-downloads
     ports:
       - 8080:8080
