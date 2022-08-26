@@ -11,4 +11,4 @@ services:
       - /share/homes/chief/Config/Heimdall:/config
     ports:
       - 5000:80
-    restart: unless-stopped
+    restart: always
