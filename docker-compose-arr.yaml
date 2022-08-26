@@ -14,8 +14,8 @@ services:
       - /share/Incoming:/downloads
     ports:
       - 8989:8989
-    restart: unless-stopped
-  
+    restart: always
+    
   radarr:
     image: ghcr.io/linuxserver/radarr:develop 
     container_name: radarr
@@ -29,8 +29,8 @@ services:
       - /share/Incoming:/downloads
     ports:
       - 7878:7878
-    restart: unless-stopped
-
+    restart: always
+    
   prowlarr:
     image: lscr.io/linuxserver/prowlarr:develop
     container_name: prowlarr
@@ -42,8 +42,8 @@ services:
       - /share/homes/chief/Config/Prowlarr:/config
     ports:
       - 9696:9696
-    restart: unless-stopped
-  
+    restart: always
+    
   lidarr:
     image: lscr.io/linuxserver/lidarr:develop
     container_name: lidarr
@@ -57,4 +57,4 @@ services:
       - /share/Incoming:/downloads 
     ports:
       - 8686:8686
-    restart: unless-stopped
+    restart: always
