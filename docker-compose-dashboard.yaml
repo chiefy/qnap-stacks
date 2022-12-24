@@ -6,5 +6,5 @@ services:
     ports:
       - 5000:3000
     volumes:
-      - /home/chief/.config/homepage:/app/config 
+      - /share/homes/chief/Config/Homepage:/app/config 
       - /var/run/docker.sock:/var/run/docker.sock # (optional) For docker integrations
