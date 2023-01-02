@@ -52,9 +52,9 @@ services:
       ND_SCANSCHEDULE: 1h
       ND_LOGLEVEL: info  
       ND_SESSIONTIMEOUT: 24h
-      ND_BASEURL: "/nd"
-      ND_TRANSCODINGCACHESIZE: "5000MB"
-      ND_IMAGECACHESIZE: "1000MB"
+      ND_BASEURL: "/"
+      ND_TRANSCODINGCACHESIZE: "2GB"
+      ND_IMAGECACHESIZE: "1GB"
       ND_ENABLEGRAVATAR: "true"
     volumes:
       - "/share/homes/chief/Config/Navidrome:/data"

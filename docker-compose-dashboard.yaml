@@ -8,3 +8,4 @@ services:
     volumes:
       - /share/homes/chief/Config/Homepage:/app/config 
       - /var/run/docker.sock:/var/run/docker.sock # (optional) For docker integrations
+    restart: always
