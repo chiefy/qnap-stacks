@@ -53,11 +53,13 @@ services:
       ND_LOGLEVEL: info  
       ND_SESSIONTIMEOUT: 24h
       ND_BASEURL: "/"
-      ND_TRANSCODINGCACHESIZE: "2GB"
+      ND_TRANSCODINGCACHESIZE: "5GB"
       ND_IMAGECACHESIZE: "1GB"
       ND_ENABLEGRAVATAR: "true"
+      ND_ENABLETRANSCODINGCONFIG: "true"
     volumes:
       - "/share/homes/chief/Config/Navidrome:/data"
       - "/share/CACHEDEV1_DATA/Music:/music:ro"
+      - "snapfifo:/var/local/snap"
 volumes:
   snapfifo:
