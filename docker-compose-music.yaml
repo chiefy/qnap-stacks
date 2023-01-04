@@ -50,7 +50,7 @@ services:
     restart: always
     environment:
       ND_SCANSCHEDULE: 1h
-      ND_LOGLEVEL: info  
+      ND_LOGLEVEL: debug  
       ND_SESSIONTIMEOUT: 24h
       ND_BASEURL: "/"
       ND_TRANSCODINGCACHESIZE: "5GB"
