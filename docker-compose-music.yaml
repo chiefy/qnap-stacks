@@ -50,13 +50,13 @@ services:
     restart: always
     environment:
       ND_SCANSCHEDULE: 1h
-      ND_LOGLEVEL: debug  
+      ND_LOGLEVEL: info  
       ND_SESSIONTIMEOUT: 24h
       ND_BASEURL: "/"
       ND_TRANSCODINGCACHESIZE: "5GB"
       ND_IMAGECACHESIZE: "1GB"
       ND_ENABLEGRAVATAR: "true"
-      ND_ENABLETRANSCODINGCONFIG: "true"
+      ND_ENABLETRANSCODINGCONFIG: "false"
     volumes:
       - "/share/homes/chief/Config/Navidrome:/data"
       - "/share/CACHEDEV1_DATA/Music:/music:ro"
