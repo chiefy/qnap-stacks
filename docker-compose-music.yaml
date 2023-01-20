@@ -30,7 +30,7 @@ services:
       - "snapfifo:/var/local/snap"
 
   podgrab:
-    image: akhilrex/podgrab
+    image: wiseindy/podgrab
     container_name: podgrab
     environment:
       - CHECK_FREQUENCY=240
