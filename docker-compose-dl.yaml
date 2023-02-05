@@ -46,6 +46,7 @@ services:
       - /share/homes/chief/Config/Tubesync:/config
       - /share/Incoming/Tubesync:/downloads
     environment:
+      - TUBESYNC_WORKERS=2
       - TZ=America/New_York
       - PUID=1000
       - PGID=100
