@@ -43,18 +43,3 @@ services:
     ports:
       - 9696:9696
     restart: always
-    
-  lidarr:
-    image: lscr.io/linuxserver/lidarr:develop
-    container_name: lidarr
-    environment:
-      - PUID=1000
-      - PGID=100
-      - TZ=America/New_York
-    volumes:
-      - /share/homes/chief/Config/Lidarr:/config
-      - /share/Music:/music 
-      - /share/Incoming:/downloads 
-    ports:
-      - 8686:8686
-    restart: always
