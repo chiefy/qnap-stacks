@@ -1,0 +1,44 @@
+version: "3.6"
+services:
+  app:
+    container_name: benotes
+    image: fr0tt/benotes:latest
+    restart: unless-stopped
+    environment:
+      DB_CONNECTION: ${DB_CONNECTION}
+      RUN_MIGRATIONS: ${RUN_MIGRATIONS}
+    ports:
+      - ${APP_PORT}:80
+    volumes:
+      - /share/homes/chief/Config/Benotes/thumbnails:/var/www/storage/app/public/thumbnails
+      - /share/homes/chief/Config/Benotes/backup:/var/www/storage/backup
+      - /share/homes/chief/Config/Benotes/:/var/www/storage/logs
+      # - ./data/nginx/logs/:/var/lib/nginx/logs/
+    networks:
+      - benotes
+
+  db:
+    container_name: benotes_db
+    image: mysql:5.7
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - 3306
+    volumes:
+      - benotes_mysql:/var/lib/mysql
+    networks:
+      - benotes
+
+networks:
+  benotes:
+    driver: bridge
+
+volumes:
+  benotes_mysql:
+    driver: "local"
+    #benotes_storage:
+    #driver: "local"
