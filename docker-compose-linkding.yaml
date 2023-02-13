@@ -4,6 +4,10 @@ services:
   linkding:
     container_name: linkding
     image: sissbruecker/linkding:latest
+    environment:
+      - PUID=1000
+      - PGID=100
+      - TZ=America/New_York
     ports:
       - "9990:9090"
     volumes:
