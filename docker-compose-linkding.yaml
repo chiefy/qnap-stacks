@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  linkding:
+    container_name: linkding
+    image: sissbruecker/linkding:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - "/share/homes/chief/Config/Linkding:/etc/linkding/data"
+    restart: always
