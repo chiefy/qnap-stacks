@@ -19,7 +19,7 @@ services:
       - 51413:51413
       - 51413:51413/udp
     restart: always
-    
+
   sabnzbd:
     image: lscr.io/linuxserver/sabnzbd
     container_name: sabnzbd
@@ -36,21 +36,6 @@ services:
       - 9090:8080
     restart: always
 
-  tubesync:
-    image: ghcr.io/meeb/tubesync:latest
-    container_name: tubesync
-    restart: always
-    ports:
-      - 4848:4848
-    volumes:
-      - /share/homes/chief/Config/Tubesync:/config
-      - /share/Incoming/Tubesync:/downloads
-    environment:
-      - TUBESYNC_WORKERS=2
-      - TZ=America/New_York
-      - PUID=1000
-      - PGID=100
-      
 networks:
   default:
     external:
