@@ -5,7 +5,7 @@ services:
     container_name: snapserver
     depends_on:
       - mopidy
-    image: chiefy/librespot-snapserver:0.26.0
+    image: chiefy/librespot-snapserver:0.27.0
     volumes:
       - "/share/homes/chief/Config/Snapcast/snapserver.conf:/etc/snapserver.conf"
       - "snapfifo:/var/local/snap:ro"
