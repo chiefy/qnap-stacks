@@ -26,6 +26,7 @@ services:
     volumes:
       - "/share/homes/chief/Config/Mopidy/mopidy.conf:/config/mopidy.conf"
       - "/share/homes/chief/Config/Mopidy/share:/usr/share/mopidy/local"
+      - "/share/homes/chief/Config/Mopidy/playlists:/usr/share/mopidy/m3u"
       - "/share/CACHEDEV1_DATA/Music:/share/CACHEDEV1_DATA/Music"
       - "snapfifo:/var/local/snap"
 
