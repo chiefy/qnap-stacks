@@ -15,7 +15,7 @@ services:
     restart: always
   
   mopidy:
-    image: chiefy/mopidy
+    image: ghcr.io/chiefy/snapcast-mopidy/mopidy:latest
     container_name: mopidy
     devices:
       - "/dev/snd"
