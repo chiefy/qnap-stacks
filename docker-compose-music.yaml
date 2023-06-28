@@ -60,7 +60,7 @@ services:
       ND_ENABLETRANSCODINGCONFIG: "false"
     volumes:
       - "/share/homes/chief/Config/Navidrome:/data"
-      - "/share/external/DEV3301_1/Music:/music:ro"
+      - "/share/Music:/music:ro"
       - "snapfifo:/var/local/snap"
 volumes:
   snapfifo:
