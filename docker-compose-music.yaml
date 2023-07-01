@@ -7,10 +7,10 @@ services:
       - mopidy
     image: chiefy/librespot-snapserver:0.27.0
     volumes:
-      - "/mnt/Config/Snapcast/snapserver.conf:/etc/snapserver.conf"
+      - "/opt/snapcast/snapserver.conf:/etc/snapserver.conf"
       - "snapfifo:/var/local/snap:ro"
     environment:
-      DEVICE_NAME: Cygnus
+      DEVICE_NAME: mingus
     network_mode: "host"
     restart: always
   
@@ -24,9 +24,9 @@ services:
       - "6680:6680"
     restart: always
     volumes:
-      - "/mnt/Config/Mopidy/mopidy.conf:/config/mopidy.conf"
-      - "/mnt/Mopidy/local:/usr/share/mopidy/local"
-      - "/mnt/Mopidy/m3u:/usr/share/mopidy/m3u"
+      - "/opt/mopidy/mopidy.conf:/config/mopidy.conf"
+      - "/opt/mopidy/local:/usr/share/mopidy/local"
+      - "/opt/mopidy/m3u:/usr/share/mopidy/m3u"
       - "/mnt/Music:/share/Music"
       - "snapfifo:/var/local/snap"
 
@@ -36,7 +36,7 @@ services:
     environment:
       - CHECK_FREQUENCY=240
     volumes:
-      - /mnt/Config/Podgrab:/config
+      - /opt/podgrab:/config
       - /mnt/Pods:/assets
     ports:
       - 8181:8080
@@ -59,7 +59,7 @@ services:
       ND_ENABLEGRAVATAR: "true"
       ND_ENABLETRANSCODINGCONFIG: "false"
     volumes:
-      - "/mnt/Config/Navidrome:/data"
+      - "/opt/navidrome:/data"
       - "/mnt/Music:/music:ro"
       - "snapfifo:/var/local/snap"
 volumes:
