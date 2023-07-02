@@ -22,5 +22,5 @@ services:
     ports:
       - 8080:3000
     volumes:
-      - /var/share/smbd/Homepage:/app/config 
+      - /mnt/Config/Homepage:/app/config 
     restart: always
