@@ -19,8 +19,8 @@ services:
   homepage:
     image: ghcr.io/benphelps/homepage:latest
     container_name: homepage
-    ports:
-      - 8080:3000
+    expose:
+      - 3000
     volumes:
       - /mnt/Config/Homepage:/app/config 
     restart: always
