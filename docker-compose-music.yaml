@@ -7,7 +7,7 @@ services:
       - mopidy
     image: chiefy/librespot-snapserver:0.27.0
     volumes:
-      - "/opt/snapcast/snapserver.conf:/etc/snapserver.conf"
+      - "/opt/snapcast/conf/snapserver.conf:/etc/snapserver.conf"
       - "snapfifo:/var/local/snap:ro"
     environment:
       DEVICE_NAME: mingus
