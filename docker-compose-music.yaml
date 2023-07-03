@@ -24,7 +24,7 @@ services:
       - "6680:6680"
     restart: always
     volumes:
-      - "/opt/mopidy/mopidy.conf:/config/mopidy.conf"
+      - "/opt/mopidy/conf/mopidy.conf:/config/mopidy.conf"
       - "/opt/mopidy/local:/usr/share/mopidy/local"
       - "/opt/mopidy/m3u:/usr/share/mopidy/m3u"
       - "/mnt/Music:/share/Music"
