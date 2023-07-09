@@ -5,7 +5,7 @@ services:
     container_name: linkding
     image: sissbruecker/linkding:latest
     environment:
-      - PUID=1000
+      - PUID=0
       - PGID=100
       - TZ=America/New_York
     ports:
