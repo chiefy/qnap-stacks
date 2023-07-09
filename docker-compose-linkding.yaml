@@ -11,5 +11,5 @@ services:
     ports:
       - "9990:9090"
     volumes:
-      - "/share/homes/chief/Config/Linkding:/etc/linkding/data"
+      - "/mnt/Linkding:/etc/linkding/data"
     restart: always
