@@ -7,10 +7,10 @@ services:
       - mopidy
     image: chiefy/librespot-snapserver:0.27.0
     volumes:
-      - "/opt/snapcast/conf/snapserver.conf:/etc/snapserver.conf"
+      - "/mnt/Config/snapcast/snapserver.conf:/etc/snapserver.conf"
       - "snapfifo:/var/local/snap:ro"
     environment:
-      DEVICE_NAME: mingus
+      DEVICE_NAME: docker
     network_mode: "host"
     restart: always
   
@@ -24,10 +24,10 @@ services:
       - "6680:6680"
     restart: always
     volumes:
-      - "/opt/mopidy/conf/mopidy.conf:/config/mopidy.conf"
-      - "/opt/mopidy/local:/usr/share/mopidy/local"
-      - "/opt/mopidy/m3u:/usr/share/mopidy/m3u"
-      - "/mnt/Music:/share/Music"
+      - "/mnt/Config/mopidy/conf/mopidy.conf:/config/mopidy.conf"
+      - "/mnt/Config/mopidy/local:/usr/share/mopidy/local"
+      - "/mnt/Config/mopidy/m3u:/usr/share/mopidy/m3u"
+      - "/mnt/Music:/mnt/Music"
       - "snapfifo:/var/local/snap"
 
   podgrab:
@@ -36,7 +36,7 @@ services:
     environment:
       - CHECK_FREQUENCY=240
     volumes:
-      - /opt/podgrab:/config
+      - /mnt/Config/podgrab:/config
       - /mnt/Pods:/assets
     ports:
       - 8181:8080
@@ -59,8 +59,9 @@ services:
       ND_ENABLEGRAVATAR: "true"
       ND_ENABLETRANSCODINGCONFIG: "false"
     volumes:
-      - "/opt/navidrome:/data"
+      - "/mnt/Config/navidrome:/data"
       - "/mnt/Music:/music:ro"
       - "snapfifo:/var/local/snap"
+
 volumes:
   snapfifo:
