@@ -7,7 +7,7 @@ services:
       - mopidy
     image: chiefy/librespot-snapserver:0.27.0
     volumes:
-      - "/mnt/Config/snapcast/snapserver.conf:/etc/snapserver.conf"
+      - "/mnt/Config/snapserver/snapserver.conf:/etc/snapserver.conf"
       - "snapfifo:/var/local/snap:ro"
     environment:
       DEVICE_NAME: docker
