@@ -45,7 +45,7 @@ services:
   navidrome:
     image: deluan/navidrome:latest
     container_name: navidrome
-    user: "1000:100"
+    user: "0:100"
     ports:
       - "4533:4533"
     restart: always
