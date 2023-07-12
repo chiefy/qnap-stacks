@@ -30,18 +30,19 @@ services:
       - "/mnt/Music:/mnt/Music"
       - "snapfifo:/var/local/snap"
 
-  podgrab:
-    image: wiseindy/podgrab
-    container_name: podgrab
-    environment:
-      - CHECK_FREQUENCY=240
-    volumes:
-      - /mnt/Config/podgrab:/config
-      - /mnt/Pods:/assets
+  podfetch:
+    image: samuel19982/podfetch:latest
+    user: ${UID:-0}:${GID:-0}
     ports:
-      - 8181:8080
+      - "8080:8000"
+    volumes:
+      - /mnt/Pods:/app/podcasts
+      - podfetch-db:/app/db
+    environment:
+      - POLLING_INTERVAL=300
+      - SERVER_URL=http://coltrane.hen-chicken.ts.net:8080
     restart: always
-
+  
   navidrome:
     image: deluan/navidrome:latest
     container_name: navidrome
@@ -65,3 +66,4 @@ services:
 
 volumes:
   snapfifo:
+  podfetch-db:
