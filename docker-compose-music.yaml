@@ -25,7 +25,7 @@ services:
     restart: always
     volumes:
       - "/mnt/Config/mopidy/conf/mopidy.conf:/config/mopidy.conf"
-      - "/tmp/mopidy:/usr/share/mopidy/local"
+      - "/mnt/Config/mopidy/local:/usr/share/mopidy/local"
       - "/mnt/Config/mopidy/m3u:/usr/share/mopidy/m3u"
       - "/mnt/Music:/mnt/Music"
       - "snapfifo:/var/local/snap"
