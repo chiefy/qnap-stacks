@@ -4,6 +4,7 @@ services:
   linkding:
     container_name: linkding
     image: sissbruecker/linkding:latest
+    user: "root:users"
     environment:
       - PUID=0
       - PGID=33
