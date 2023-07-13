@@ -11,6 +11,5 @@ services:
     ports:
       - "9990:9090"
     volumes:
-      - "/mnt/Config/linkding:/etc/linkding/data"
-      - "/mnt/Config/linkding/conf/uwsgi.ini:/etc/linkding/uwsgi.ini"
+      - "/usr/share/linkding:/etc/linkding/data"
     restart: always
