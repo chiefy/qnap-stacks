@@ -4,7 +4,6 @@ services:
   linkding:
     container_name: linkding
     image: sissbruecker/linkding:latest
-    user: "root:users"
     environment:
       - PUID=0
       - PGID=33
@@ -13,4 +12,5 @@ services:
       - "9990:9090"
     volumes:
       - "/mnt/Config/linkding:/etc/linkding/data"
+      - "/mnt/Config/linkdgin/conf/uwsgi.ini:/etc/linkding/uwsgi.ini"
     restart: always
