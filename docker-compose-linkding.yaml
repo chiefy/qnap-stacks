@@ -6,10 +6,10 @@ services:
     image: sissbruecker/linkding:latest
     environment:
       - PUID=0
-      - PGID=100
+      - PGID=33
       - TZ=America/New_York
     ports:
       - "9990:9090"
     volumes:
-      - "/usr/share/linkding:/etc/linkding/data"
+      - "/mnt/Config/linkding:/etc/linkding/data"
     restart: always
