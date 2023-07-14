@@ -32,7 +32,8 @@ services:
 
   podfetch:
     image: samuel19982/podfetch:latest
-    user: ${UID:-0}:${GID:-0}
+    container_name: podfetch
+    user: ${UID:-0}:${GID:-100}
     ports:
       - "8080:8000"
     volumes:
