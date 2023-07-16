@@ -41,7 +41,7 @@ services:
       - podfetch-db:/app/db
     environment:
       - POLLING_INTERVAL=300
-      - SERVER_URL=http://coltrane.hen-chicken.ts.net:8080
+      - SERVER_URL=http://pod.chief.home
     restart: always
   
   navidrome:
