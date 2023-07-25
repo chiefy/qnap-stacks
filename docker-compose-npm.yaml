@@ -10,9 +10,10 @@ services:
       - "443:443" # Public HTTPS Port
       - "81:81" # Admin Web Port
     environment:
-      DB_SQLITE_FILE: "/mnt/Config/npm/database.sqlite"
+      DB_SQLITE_FILE: "/usr/share/npm/database.sqlite"
       DISABLE_IPV6: "true"
     volumes:
+      - /mnt/Config/npm/database.sqlite:/usr/share/npm/database.sqlite
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
 
