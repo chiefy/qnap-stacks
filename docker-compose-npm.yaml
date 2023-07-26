@@ -10,11 +10,10 @@ services:
       - "443:443" # Public HTTPS Port
       - "81:81" # Admin Web Port
     environment:
-      DB_SQLITE_FILE: "/usr/share/npm/database.sqlite"
+      DB_SQLITE_FILE: "/data/database.sqlite"
       DISABLE_IPV6: "true"
     volumes:
-      - /mnt/Config/npm/database.sqlite:/usr/share/npm/database.sqlite
-      - ./data:/data
+      -  /usr/share/npm:/data
       - ./letsencrypt:/etc/letsencrypt
 
   goaccess:
@@ -31,5 +30,5 @@ services:
         - EXCLUDE_IPS=127.0.0.1 #optional - comma delimited 
         - LOG_TYPE=NPM #optional - more information below
     volumes:
-    - ./data/logs:/opt/log
+    - /usr/share/npm/logs:/data/logs
     #- /path/to/host/custom:/opt/custom #optional, required if using log_type = CUSTOM
