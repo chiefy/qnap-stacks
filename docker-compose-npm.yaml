@@ -30,5 +30,5 @@ services:
         - EXCLUDE_IPS=127.0.0.1 #optional - comma delimited 
         - LOG_TYPE=NPM #optional - more information below
     volumes:
-    - /usr/share/npm/logs:/data/logs
+    - /usr/share/npm/logs:/opt/log
     #- /path/to/host/custom:/opt/custom #optional, required if using log_type = CUSTOM
