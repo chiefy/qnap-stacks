@@ -30,19 +30,15 @@ services:
       - "/mnt/Music:/mnt/Music"
       - "snapfifo:/var/local/snap"
 
-  podfetch:
-    image: samuel19982/podfetch:latest
-    container_name: podfetch
-    user: ${UID:-0}:${GID:-100}
+  audiobookshelf:
+    image: ghcr.io/advplyr/audiobookshelf:latest
     ports:
-      - "8080:8000"
+      - 13378:80
     volumes:
-      - /mnt/Pods:/app/podcasts
-      - podfetch-db:/app/db
-    environment:
-      - POLLING_INTERVAL=300
-      - SERVER_URL=http://pod.chief.home
-    restart: always
+      - /mnt/Audiobooks:/audiobooks
+      - /mnt/Pods:/podcasts
+      - /mnt/Config/audiobookshelf/config:/config
+      - /mnt/Config/audiobookshelf/metadata:/metadata
   
   navidrome:
     image: deluan/navidrome:latest
