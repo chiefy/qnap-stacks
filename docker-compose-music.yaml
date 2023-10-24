@@ -22,7 +22,7 @@ services:
     ports:
       - "6600:6600"
       - "6680:6680"
-      - "4953:4953"
+      #- "4953:4953"
     restart: always
     volumes:
       - "/mnt/Config/mopidy/conf/mopidy.conf:/config/mopidy.conf"
