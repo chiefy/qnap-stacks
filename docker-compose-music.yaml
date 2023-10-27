@@ -4,7 +4,7 @@ services:
   snapserver:
     container_name: snapserver
     depends_on:
-      - mopidy
+      - mpd
     image: chiefy/librespot-snapserver:0.27.0
     volumes:
       - "/mnt/Config/snapserver/snapserver.conf:/etc/snapserver.conf"
