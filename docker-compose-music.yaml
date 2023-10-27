@@ -13,21 +13,16 @@ services:
       DEVICE_NAME: docker
     network_mode: "host"
     restart: always
-  
-  mopidy:
-    image: ghcr.io/chiefy/snapcast-mopidy/mopidy:latest
-    container_name: mopidy
-   # devices:
-   #   - "/dev/snd"
+
+  mpd:
+    image: ghcr.io/chiefy/dockerfiles/mpd:latest
+    container_name: mpd
     ports:
       - "6600:6600"
-      - "6680:6680"
-      #- "4953:4953"
     restart: always
     volumes:
-      - "/mnt/Config/mopidy/conf/mopidy.conf:/config/mopidy.conf"
-      - "/usr/share/mopidy/local:/usr/share/mopidy/local"
-      - "/mnt/Config/mopidy/m3u:/usr/share/mopidy/m3u"
+      - "/mnt/Config/mpd/mpd.conf:/etc/mpd.conf"
+      - "/mnt/Config/mpd:/var/lib/mpd"
       - "/mnt/Music:/mnt/Music"
       - "snapfifo:/var/local/snap"
 
@@ -64,4 +59,4 @@ services:
 
 volumes:
   snapfifo:
-  podfetch-db:
+  
