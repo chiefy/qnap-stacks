@@ -8,7 +8,7 @@ services:
     image: chiefy/librespot-snapserver:0.27.0
     volumes:
       - "/mnt/Config/snapserver/snapserver.conf:/etc/snapserver.conf"
-      - "snapfifo:/var/local/snap:ro"
+      - "snapfifo:/tmp/snapfifo:ro"
     environment:
       DEVICE_NAME: docker
     network_mode: "host"
@@ -24,7 +24,7 @@ services:
       - "/mnt/Config/mpd/mpd.conf:/etc/mpd.conf"
       - "/mnt/Config/mpd:/var/lib/mpd"
       - "/mnt/Music:/mnt/Music"
-      - "snapfifo:/var/local/snap"
+      - "snapfifo:/tmp/snapfifo"
 
   audiobookshelf:
     image: ghcr.io/advplyr/audiobookshelf:latest
