@@ -55,7 +55,6 @@ services:
     volumes:
       - "/mnt/Config/navidrome:/data"
       - "/mnt/Music:/music:ro"
-      - "snapfifo:/var/local/snap"
 
 volumes:
   snapfifo:
