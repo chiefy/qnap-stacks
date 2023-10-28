@@ -26,6 +26,25 @@ services:
       - "/mnt/Music:/mnt/Music"
       - "snapfifo:/tmp/snapfifo"
 
+  mympd:
+    image: ghcr.io/jcorporation/mympd/mympd
+    container_name: mympd
+    user: 1000:1000
+    ports:
+      - "9999:9999"
+    environment:
+      - UMASK_SET=022
+      - MYMPD_SSL=false
+      - MYMPD_HTTP_PORT=9999
+      - MPD_HOST=mpd
+      - MPD_PORT=6600
+    volumes:
+      - /mnt/Config/mpd/mympd/:/var/lib/mympd/
+      - /mnt/Config/mpd/mympd/cache/:/var/cache/mympd/
+      - /mnt/Music/:/music/:ro
+      - /mnt/Config/mpd/playlists/:/playlists/:ro
+    restart: unless-stopped
+
   audiobookshelf:
     image: ghcr.io/advplyr/audiobookshelf:latest
     ports:
@@ -35,7 +54,7 @@ services:
       - /mnt/Pods:/podcasts
       - /mnt/Config/audiobookshelf/config:/config
       - /mnt/Config/audiobookshelf/metadata:/metadata
-  
+
   navidrome:
     image: deluan/navidrome:latest
     container_name: navidrome
@@ -58,4 +77,3 @@ services:
 
 volumes:
   snapfifo:
-  
