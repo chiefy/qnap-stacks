@@ -23,4 +23,5 @@ services:
       - OPENVPN_PASSWORD=${NORDVPN_PASSWORD}
       # Timezone for accurate log times
       - TZ=America/New_York
-      - SERVER_HOSTNAMES=us4.vpn.airdns.org,us3.vpn.airdns.org
+      - SERVER_COUNTRIES="United States"
+      - SERVER_REGIONS="New York"
