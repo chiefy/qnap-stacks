@@ -1,9 +1,10 @@
-version: "2.1"
+version: "3"
 services:
 
   transmission:
     image: lscr.io/linuxserver/transmission
     container_name: transmission
+    network_mode: "container:gluetun"
     environment:
       - PUID=1000
       - PGID=100
@@ -23,6 +24,7 @@ services:
   sabnzbd:
     image: lscr.io/linuxserver/sabnzbd
     container_name: sabnzbd
+    network_mode: "container:gluetun"
     environment:
       - PUID=1000
       - PGID=100
@@ -35,8 +37,3 @@ services:
     ports:
       - 9090:8080
     restart: always
-
-networks:
-  default:
-    external:
-      name: arr_default

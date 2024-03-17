@@ -1,9 +1,10 @@
 version: "3"
 services:
- 
+
   sonarr:
     image: ghcr.io/linuxserver/sonarr:develop
     container_name: sonarr
+    network_mode: "container:gluetun"
     environment:
       - PUID=1000
       - PGID=100
@@ -15,9 +16,10 @@ services:
     ports:
       - 8989:8989
     restart: always
-    
+
   radarr:
     image: ghcr.io/linuxserver/radarr:develop 
+    network_mode: "container:gluetun"
     container_name: radarr
     environment:
       - PUID=1000
@@ -30,9 +32,10 @@ services:
     ports:
       - 7878:7878
     restart: always
-    
+
   prowlarr:
     image: lscr.io/linuxserver/prowlarr:develop
+    network_mode: "container:gluetun"
     container_name: prowlarr
     environment:
       - PUID=1000
