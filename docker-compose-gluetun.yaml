@@ -12,8 +12,10 @@ services:
       - 8888:8888/tcp # HTTP proxy
       - 8388:8388/tcp # Shadowsocks
       - 8388:8388/udp # Shadowsocks
-    volumes:
-      - /yourpath:/gluetun
+      - 9091:9091 # transmission
+      - 51413:51413 # transmission
+      - 51413:51413/udp # transmission
+      - 9090:8080 # sabnzbd
     environment:
       # See https://github.com/qdm12/gluetun-wiki/tree/main/setup#setup
       - VPN_SERVICE_PROVIDER=nordvpn
