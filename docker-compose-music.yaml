@@ -52,7 +52,7 @@ services:
     volumes:
       - /mnt/Audiobooks:/audiobooks
       - /mnt/Pods:/podcasts
-      - /mnt/Config/audiobookshelf/config:/config
+      - /usr/share/audiobookshelf:/config
       - /mnt/Config/audiobookshelf/metadata:/metadata
 
   navidrome:
