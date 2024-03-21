@@ -22,7 +22,7 @@ services:
     restart: always
     volumes:
       - "/mnt/Config/mpd/mpd.conf:/etc/mpd.conf"
-      # - "/mnt/Config/mpd:/var/lib/mpd"
+      - "/usr/share/mpd:/var/lib/mpd"
       - "/mnt/Music:/mnt/Music"
       - "snapfifo:/tmp/snapfifo"
 
