@@ -11,7 +11,7 @@ services:
       - "snapfifo:/tmp/snapfifo:ro"
     environment:
       DEVICE_NAME: docker
-    network_mode: "host"
+    network_mode: host
     restart: always
 
   mpd:
@@ -21,10 +21,11 @@ services:
       - "6600:6600"
     restart: always
     volumes:
-      - "/mnt/Config/mpd/mpd.conf:/etc/mpd.conf"
-      - "/usr/share/mpd:/var/lib/mpd"
-      - "/mnt/Music:/mnt/Music"
-      - "snapfifo:/tmp/snapfifo"
+      - /mnt/Config/mpd/mpd.conf:/etc/mpd.conf
+      - /usr/share/mpd:/var/lib/mpd
+      - /mnt/Config/mpd/playlists/:/var/lib/mpd/playlists
+      - /mnt/Music:/mnt/Music:ro
+      - snapfifo:/tmp/snapfifo
 
   mympd:
     image: ghcr.io/jcorporation/mympd/mympd
@@ -39,9 +40,8 @@ services:
       - MPD_PORT=6600
     volumes:
       - /mnt/Config/mpd/mympd/:/var/lib/mympd/
-      - /mnt/Config/mpd/mympd/cache/:/var/cache/mympd/
       - /mnt/Music/:/music/:ro
-      - /mnt/Config/mpd/playlists/:/playlists/:ro
+      - /mnt/Config/mpd/playlists/:/playlists/
     restart: unless-stopped
 
   audiobookshelf:
@@ -64,7 +64,7 @@ services:
     restart: always
     environment:
       ND_SCANSCHEDULE: 1h
-      ND_LOGLEVEL: info  
+      ND_LOGLEVEL: info
       ND_SESSIONTIMEOUT: 24h
       ND_BASEURL: "/"
       ND_TRANSCODINGCACHESIZE: "5GB"
@@ -72,8 +72,8 @@ services:
       ND_ENABLEGRAVATAR: "true"
       ND_ENABLETRANSCODINGCONFIG: "false"
     volumes:
-      - "/mnt/Config/navidrome:/data"
-      - "/mnt/Music:/music:ro"
+      - /mnt/Config/navidrome:/data
+      - /mnt/Music:/music:ro
 
 volumes:
   snapfifo:
