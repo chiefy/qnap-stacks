@@ -5,7 +5,7 @@ services:
     container_name: snapserver
     depends_on:
       - mpd
-    image: chiefy/librespot-snapserver:0.27.0
+    image: ghcr.io/chiefy/dockerfiles/snapcast-librespot:latest
     volumes:
       - "/mnt/Config/snapserver/snapserver.conf:/etc/snapserver.conf"
       - "snapfifo:/tmp/snapfifo:ro"
