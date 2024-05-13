@@ -1,0 +1,12 @@
+version: "3"
+services:
+  owncast:
+    image: owncast/owncast:latest
+    container_name: owncast
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - "1935:1935"
+    volumes:
+      - "/usr/share/owncast:/app/data"
