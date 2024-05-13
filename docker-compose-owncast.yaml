@@ -5,7 +5,7 @@ services:
     container_name: streamer
     restart: unless-stopped
     environment:
-      - VIDEO_DIR=/mnt/Movies
+      - VIDEO_DIR=/mnt/Movies/TDS
       - OWNCAST_STREAM_KEY=${OWNCAST_STREAM_KEY}
       - OWNCAST_STREAM_URL=${OWNCAST_STREAM_URL}
     volumes:
