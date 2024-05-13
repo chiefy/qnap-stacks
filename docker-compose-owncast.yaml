@@ -8,5 +8,6 @@ services:
       - no-new-privileges:true
     ports:
       - "1935:1935"
+      - "8765:8080"
     volumes:
       - "/usr/share/owncast:/app/data"
