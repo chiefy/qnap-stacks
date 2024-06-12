@@ -48,7 +48,7 @@ services:
       # replace https://cobalt.tools/ with your instance's target url in same format
       WEB_URL: "https://cobalt.skibidi.cc/"
       # replace https://api.cobalt.tools/ with preferred api instance url
-      API_URL: "https://api.cobalt.skibidi.cc/"
+      API_URL: "https://cobalt-api.skibidi.cc/"
 
     labels:
       - com.centurylinklabs.watchtower.scope=cobalt
