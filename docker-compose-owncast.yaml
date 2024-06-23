@@ -1,15 +1,15 @@
 version: "3"
 services:
-  streamer:
-    image: ghcr.io/chiefy/docker-ffmpeg-mp4-folder:latest
-    container_name: streamer
-    restart: unless-stopped
-    environment:
-      - VIDEO_DIR=/mnt/Movies/TDS
-      - OWNCAST_STREAM_KEY=${OWNCAST_STREAM_KEY}
-      - OWNCAST_STREAM_URL=${OWNCAST_STREAM_URL}
-    volumes:
-      - "/mnt/Movies:/mnt/Movies"
+  # streamer:
+  #   image: ghcr.io/chiefy/docker-ffmpeg-mp4-folder:latest
+  #   container_name: streamer
+  #   restart: unless-stopped
+  #   environment:
+  #     - VIDEO_DIR=/mnt/Movies/TDS
+  #     - OWNCAST_STREAM_KEY=${OWNCAST_STREAM_KEY}
+  #     - OWNCAST_STREAM_URL=${OWNCAST_STREAM_URL}
+  #   volumes:
+  #     - "/mnt/Movies:/mnt/Movies"
 
   owncast:
     image: owncast/owncast:latest
