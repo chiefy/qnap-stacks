@@ -1,4 +1,3 @@
-version: "3"
 services:
   gluetun:
     image: qmcgaw/gluetun
@@ -19,7 +18,7 @@ services:
     environment:
       # See https://github.com/qdm12/gluetun-wiki/tree/main/setup#setup
       - VPN_SERVICE_PROVIDER=nordvpn
-      - VPN_TYPE=openvpn
+      # - VPN_TYPE=openvpn
       # OpenVPN:
       - OPENVPN_USER=${NORDVPN_USER}
       - OPENVPN_PASSWORD=${NORDVPN_PASSWORD}
