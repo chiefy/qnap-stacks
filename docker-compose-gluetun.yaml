@@ -24,5 +24,5 @@ services:
       - OPENVPN_PASSWORD=${NORDVPN_PASSWORD}
       # Timezone for accurate log times
       - TZ=America/New_York
-      - SERVER_COUNTRIES=United\ States
+      - SERVER_COUNTRIES="United States"
       - SERVER_REGIONS=America
