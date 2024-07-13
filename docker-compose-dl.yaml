@@ -9,7 +9,7 @@ services:
       - TZ=America/New_York
       - WHITELIST=
     volumes:
-      - /share/homes/chief/Config/Transmission:/config
+      - /share/Config/transmission:/config
       - /share/Incoming:/downloads
       - /share/Movies:/movies
       - /share/Shows:/tv
@@ -24,7 +24,7 @@ services:
       - PGID=100
       - TZ=America/New_York
     volumes:
-      - /share/homes/chief/Config/Sabnzbd:/config
+      - /share/Config/sabnzbd:/config
       - /share/Incoming:/downloads
       - /share/Movies:/movies
       - /share/Shows:/tv
