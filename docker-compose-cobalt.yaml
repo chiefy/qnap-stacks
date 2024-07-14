@@ -40,7 +40,7 @@ services:
     #tty: true
 
     ports:
-      - 9091:9001/tcp
+      - 8991:9001/tcp
       # if you're using a reverse proxy, uncomment the next line and remove the one above (9001:9001/tcp):
       #- 127.0.0.1:9001:9001
 
