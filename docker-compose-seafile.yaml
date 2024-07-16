@@ -22,7 +22,7 @@ services:
     image: seafileltd/seafile-mc:11.0-latest
     container_name: seafile
     ports:
-      #- "80:80"
+      - "9080:80"
       - "9443:443"
     volumes:
       - /opt/seafile-data:/shared # Required, specifies the path to Seafile data persistent store.
