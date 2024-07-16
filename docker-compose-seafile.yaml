@@ -23,7 +23,6 @@ services:
     container_name: seafile
     ports:
       - "9080:80"
-      - "9443:443"
     volumes:
       - /opt/seafile-data:/shared # Required, specifies the path to Seafile data persistent store.
     environment:
@@ -33,7 +32,7 @@ services:
       - SEAFILE_ADMIN_EMAIL=${ADMIN_EMAIL}
       - SEAFILE_ADMIN_PASSWORD=${ADMIN_PASSWORD}
       - SEAFILE_SERVER_LETSENCRYPT=false
-      - SEAFILE_SERVER_HOSTNAME=seafile.skibidi.cc
+      - SEAFILE_SERVER_HOSTNAME=seafile.skibidi.cc:9080
       - FORCE_HTTPS_IN_CONF=true
     depends_on:
       - db
