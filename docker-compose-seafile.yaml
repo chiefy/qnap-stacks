@@ -34,6 +34,7 @@ services:
       - SEAFILE_ADMIN_PASSWORD=${ADMIN_PASSWORD}
       - SEAFILE_SERVER_LETSENCRYPT=false
       - SEAFILE_SERVER_HOSTNAME=seafile.skibidi.cc
+      - FORCE_HTTPS_IN_CONF=true
     depends_on:
       - db
       - memcached
