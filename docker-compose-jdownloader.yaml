@@ -2,12 +2,14 @@ services:
   jdownloader-2:
     image: jlesage/jdownloader-2
     restart: always
+    container_name: jdownloader
     environment:
       - MYJDOWNLOADER_EMAIL=${MYJDOWNLOADER_EMAIL}
       - MYJDOWNLOADER_PASSWORD=${MYJDOWNLOADER_PASSWORD}
       - MYJDOWNLOADER_DEVICE_NAME=blakey
       - JDOWNLOADER_HEADLESS=1
       - GROUP_ID=100
+      - USER_ID=0
     volumes:
       - "/opt/jdownloader:/config:rw"
       - "/mnt/Incoming:/output:rw"
