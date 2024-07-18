@@ -7,6 +7,7 @@ services:
       - MYJDOWNLOADER_PASSWORD=${MYJDOWNLOADER_PASSWORD}
       - MYJDOWNLOADER_DEVICE_NAME=blakey
       - JDOWNLOADER_HEADLESS=1
+      - GROUP_ID=100
     volumes:
       - "/opt/jdownloader:/config:rw"
       - "/mnt/Incoming:/output:rw"
