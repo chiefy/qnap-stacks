@@ -9,5 +9,5 @@ services:
       - MYJDOWNLOADER_DEVICE_NAME=blakey
       - JDOWNLOADER_HEADLESS=1
     volumes:
-      - "/mnt/Config/jdownloader:/config:rw"
+      - "/opt/jdownloader:/config:rw"
       - "/mnt/Incoming:/output:rw"
