@@ -1,0 +1,24 @@
+services:
+  jellyfin:
+    image: linuxserver/jellyfin
+    container_name: jellyfin
+    user: 0:100
+    network_mode: host
+    volumes:
+      - /mnt/Config/jellyfin:/config
+      - /opt/jellyfin/cache:/cache
+      - type: bind
+        source: /mnt/Movies
+        target: /mnt/Movies
+        read_only: true
+      - type: bind
+        source: /mnt/Shows
+        target: /mnt/Shows
+        read_only: true
+    restart: "unless-stopped"
+    # Optional - alternative address used for autodiscovery
+    environment:
+      - JELLYFIN_PublishedServerUrl=http://jellyfin.skibidi.cc
+    # Optional - may be necessary for docker healthcheck to pass if running in host network mode
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
