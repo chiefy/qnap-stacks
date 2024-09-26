@@ -40,7 +40,7 @@ services:
       - MPD_PORT=6600
     volumes:
       - /mnt/Config/mpd/mympd/:/var/lib/mympd/
-      - /tmp/mympdcache:/var/cache/mympd/
+      - /tmp:/var/cache/mympd/
       - /mnt/Music/:/music/:ro
       - /mnt/Config/mpd/playlists/:/playlists/
     restart: unless-stopped
