@@ -30,7 +30,7 @@ services:
   mympd:
     image: ghcr.io/jcorporation/mympd/mympd
     container_name: mympd
-    user: 1000:1000
+    user: 1000:100
     ports:
       - "9999:80"
     environment:
