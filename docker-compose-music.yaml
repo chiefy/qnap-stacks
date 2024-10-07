@@ -8,6 +8,7 @@ services:
     image: ghcr.io/chiefy/dockerfiles/snapcast-librespot:latest
     volumes:
       - "/mnt/Config/snapserver/snapserver.conf:/etc/snapserver.conf"
+      - "/mnt/Config/snapserver/credentials.json:/data/librespot/credentials.json"
       - "snapfifo:/tmp/snapfifo:ro"
     environment:
       DEVICE_NAME: docker
