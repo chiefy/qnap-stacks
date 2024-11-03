@@ -1,3 +1,6 @@
+volumes:
+  data:
+
 services:
   freshrss:
     image: freshrss/freshrss:latest
@@ -5,7 +8,7 @@ services:
     hostname: freshrss
     restart: unless-stopped
     volumes:
-      - /mnt/Config/freshrss/data:/var/www/FreshRSS/data
+      - data:/var/www/FreshRSS/data
       - /mnt/Config/freshrss/extensions:/var/www/FreshRSS/extensions
     ports:
       - "9876:9876"
