@@ -24,6 +24,7 @@ services:
       - PGID=100
       - TZ=America/New_York
     volumes:
+      - /usr/share/sabnzbd:/config/admin
       - /config/sabnzbd:/config
       - /incoming:/downloads
       - /movies:/movies
