@@ -7,9 +7,9 @@ services:
       - PGID=100
       - TZ=America/New_York
     volumes:
-      - /share/Config/sonarr:/config
-      - /share/Shows:/tv
-      - /share/Incoming:/downloads
+      - /config/sonarr:/config
+      - /shows:/tv
+      - /incoming:/downloads
     ports:
       - 8989:8989
     restart: always
@@ -22,9 +22,9 @@ services:
       - PGID=100
       - TZ=America/New_York
     volumes:
-      - /share/Config/radarr:/config
-      - /share/Movies:/movies
-      - /share/Incoming:/downloads
+      - /config/radarr:/config
+      - /movies:/movies
+      - /incoming:/downloads
     ports:
       - 7878:7878
     restart: always
@@ -37,7 +37,7 @@ services:
       - PGID=100
       - TZ=America/New_York
     volumes:
-      - /share/Config/prowlarr:/config
+      - /config/prowlarr:/config
     ports:
       - 9696:9696
     restart: always
