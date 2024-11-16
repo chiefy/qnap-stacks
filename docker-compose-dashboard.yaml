@@ -7,5 +7,5 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - /mnt/Config/homepage:/app/config
+      - /config/homepage:/app/config
     restart: always
