@@ -45,7 +45,6 @@ services:
     networks:
       - lama
     mem_limit: 20g
-    mem_reservation: 10g
     cpus: 0.75
     deploy:
       resources:
@@ -54,3 +53,6 @@ services:
             - driver: nvidia
               count: 1
               capabilities: [gpu]
+
+networks:
+  lama:
