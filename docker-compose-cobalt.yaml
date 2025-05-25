@@ -12,7 +12,7 @@ services:
         environment:
             # replace https://api.url.example/ with your instance's url
             # or else tunneling functionality won't work properly
-            API_URL: "https://cobalt.skibidi.cc/"
+            API_URL: "https://cobalt-api.skibidi.cc/"
         labels:
             - com.centurylinklabs.watchtower.scope=cobalt
 
