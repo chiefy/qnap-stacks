@@ -12,19 +12,6 @@ services:
     labels:
       - com.centurylinklabs.watchtower.scope=cobalt
 
-  cobalt-web:
-    image: ghcr.io/imputnet/cobalt:10
-    restart: unless-stopped
-    container_name: cobalt-web
-    init: true
-    ports:
-      - 8991:9001/tcp
-    environment:
-      WEB_URL: "https://cobalt.skibidi.cc/"
-      API_URL: "https://cobalt-api.skibidi.cc/"
-    labels:
-      - com.centurylinklabs.watchtower.scope=cobalt
-
     # watchtower updates the cobalt image automatically
   watchtower:
     image: ghcr.io/containrrr/watchtower
