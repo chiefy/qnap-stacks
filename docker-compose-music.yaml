@@ -62,6 +62,7 @@ services:
       ND_IMAGECACHESIZE: "1GB"
       ND_ENABLEGRAVATAR: "true"
       ND_ENABLETRANSCODINGCONFIG: "false"
+      ND_COVERARTPRIORITY: "embedded, front.*, cover.*, folder.*, external"
     volumes:
       - /mnt/Config/navidrome:/data
       - /mnt/Music:/music:ro
