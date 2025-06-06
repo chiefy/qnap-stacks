@@ -54,7 +54,7 @@ services:
       - "4533:4533"
     restart: always
     environment:
-      ND_BACKUP_PATH: "/data/backups"
+      ND_BACKUP_PATH: "/backups"
       ND_BACKUP_SCHEDULE: "0 0 * * *"
       ND_BACKUP_COUNT: 5
       ND_SCANSCHEDULE: 1h
@@ -67,7 +67,7 @@ services:
       ND_ENABLETRANSCODINGCONFIG: "false"
       ND_COVERARTPRIORITY: "embedded, front.*, cover.*, folder.*, external"
     volumes:
-      - /mnt/Config/navidrome/backups:/data/backups
+      - /mnt/Config/navidrome/backups:/backups
       - /usr/share/navidrome:/data
       - /mnt/Music:/music:ro
 
