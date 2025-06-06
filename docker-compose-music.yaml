@@ -64,7 +64,7 @@ services:
       ND_ENABLETRANSCODINGCONFIG: "false"
       ND_COVERARTPRIORITY: "embedded, front.*, cover.*, folder.*, external"
     volumes:
-      - /mnt/Config/navidrome:/data
+      - /usr/share/navidrome:/data
       - /mnt/Music:/music:ro
 
 volumes:
