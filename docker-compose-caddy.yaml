@@ -3,6 +3,7 @@ services:
     image: ghcr.io/chiefy/dockerfiles/caddy:latest
     restart: unless-stopped
     network_mode: host
+    container_name: caddy
     environment:
       - ACME_AGREE=true
       - CLOUDFLARE_EMAIL=${CLOUDFLARE_EMAIL}
