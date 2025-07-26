@@ -2,19 +2,15 @@ services:
   caddy:
     image: ghcr.io/chiefy/dockerfiles/caddy:latest
     restart: unless-stopped
+    network_mode: host
     environment:
       - ACME_AGREE=true
       - CLOUDFLARE_EMAIL=${CLOUDFLARE_EMAIL}
       - CLOUDFLARE_API_TOKEN=${CLOUDFLARE_API_TOKEN}
-    ports:
-      - "80:80"
-      - "443:443"
-      - "443:443/udp"
     volumes:
       - /mnt/Config/caddy/Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
-
 volumes:
   caddy_data:
   caddy_config:
