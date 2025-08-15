@@ -9,3 +9,5 @@ services:
     volumes:
       - /config/homepage:/app/config
     restart: always
+    environment:
+      - HOMEPAGE_ALLOWED_HOSTS=dash.skibidi.cc,dash.scrimped.cc
