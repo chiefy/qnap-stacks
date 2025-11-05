@@ -25,6 +25,7 @@ services:
       - /mnt/Config/mpd/mpd.conf:/etc/mpd.conf
       - /usr/share/mpd:/var/lib/mpd
       - /mnt/Config/mpd/playlists/:/var/lib/mpd/playlists
+      - /mnt/Config/mpd/sticker.sql:/var/lib/mpd/sticker.sql
       - /mnt/Music:/mnt/Music:ro
       - snapfifo:/tmp/snapfifo
 
