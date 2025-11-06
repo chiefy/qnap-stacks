@@ -16,7 +16,7 @@ services:
     restart: always
 
   mpd:
-    image: ghcr.io/chiefy/dockerfiles/mpd:latest
+    image: ghcr.io/chiefy/alpine-mpd:latest
     container_name: mpd
     ports:
       - "6600:6600"
