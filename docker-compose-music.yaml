@@ -24,6 +24,8 @@ services:
       - SYS_NICE
       - SYS_PTRACE
       - PERFMON
+    environment:
+      VERBOSE: ${VERBOSE}
     volumes:
       - /mnt/Config/mpd/mpd.conf:/etc/mpd.conf
       - /usr/share/alpine-mpd:/var/lib/mpd
