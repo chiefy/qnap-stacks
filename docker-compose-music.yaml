@@ -20,6 +20,10 @@ services:
     ports:
       - "6600:6600"
     restart: always
+    cap_add:
+      - SYS_NICE
+      - SYS_PTRACE
+      - PERFMON
     volumes:
       - /mnt/Config/mpd/mpd.conf:/etc/mpd.conf
       - /usr/share/alpine-mpd:/var/lib/mpd
