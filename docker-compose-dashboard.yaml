@@ -7,7 +7,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - /config/homepage:/app/config
+      - /mnt/Config/homepage:/app/config
     restart: always
     environment:
       - HOMEPAGE_ALLOWED_HOSTS=dash.skibidi.cc,dash.scrimped.cc
