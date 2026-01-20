@@ -3,7 +3,7 @@ services:
     container_name: snapserver
     depends_on:
       - mpd
-    image: ghcr.io/chiefy/dockerfiles/snapcast-librespot:latest
+    image: ghcr.io/chiefy/snapcast-librespot:latest
     volumes:
       - "/mnt/Config/snapserver/snapserver.conf:/etc/snapserver.conf"
       - "/mnt/Config/snapserver/credentials.json:/data/librespot/credentials.json"
