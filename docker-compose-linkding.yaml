@@ -8,6 +8,8 @@ services:
       - PUID=0
       - PGID=33
       - TZ=America/New_York
+    env_file:
+      - ./stack.env
     ports:
       - "9990:9090"
     volumes:
