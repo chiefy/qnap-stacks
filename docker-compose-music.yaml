@@ -15,7 +15,6 @@ services:
 
   mpd:
     image: ghcr.io/chiefy/alpine-mpd:latest
-#    image: ghcr.io/chiefy/dockerfiles/mpd@sha256:1a7fc1403d2b201d496a30247d4525464ab144010065d38e072db1c46300a055
     container_name: mpd
     ports:
       - "6600:6600"
@@ -32,7 +31,7 @@ services:
       #- /usr/share/mpd:/var/lib/mpd
       - /mnt/Config/mpd/playlists/:/var/lib/mpd/playlists
       - /mnt/Music:/mnt/Music:ro
-      #- snapfifo:/tmp/snapfifo
+      - snapfifo:/tmp/snapfifo
 
   mympd:
     image: ghcr.io/jcorporation/mympd/mympd
@@ -64,7 +63,6 @@ services:
       - /usr/share/navidrome:/data
       - /mnt/Config/navidrome/navidrome.toml:/data/navidrome.toml
       - /mnt/Music:/music:ro
-      - snapfifo:/tmp/snapfifo
 
 volumes:
   snapfifo:
