@@ -32,7 +32,7 @@ services:
       #- /usr/share/mpd:/var/lib/mpd
       - /mnt/Config/mpd/playlists/:/var/lib/mpd/playlists
       - /mnt/Music:/mnt/Music:ro
-      - snapfifo:/tmp/snapfifo
+      #- snapfifo:/tmp/snapfifo
 
   mympd:
     image: ghcr.io/jcorporation/mympd/mympd
@@ -64,6 +64,7 @@ services:
       - /usr/share/navidrome:/data
       - /mnt/Config/navidrome/navidrome.toml:/data/navidrome.toml
       - /mnt/Music:/music:ro
+      - snapfifo:/tmp/snapfifo
 
 volumes:
   snapfifo:
